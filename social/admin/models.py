@@ -136,13 +136,13 @@ class MessageAdmin(admin.ModelAdmin):
     list_filter = ('network', 'media_type', 'status', 'date', '_tags')
     list_display_links = ('id', 'admin_media_preview' )
     readonly_fields = ('admin_media_preview', 'reply_to',)
-    exclude = ('tags', )
+    # exclude = ('tags', )
     ordering = ('-status', '-date')
-    
+
     class Media:
         js = ("jquery.multiselect.js", "tag_multiselect.js", "json2.js", )
         css = { 'all': ("jquery.multiselect.css", ) }
-        
+
 
 class FacebookAccountAdmin(HideableAdmin):
     pref_model = FacebookSetting
